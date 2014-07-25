@@ -1,12 +1,22 @@
 package alchemy
 
-type Options struct {
+type GetTextOptions struct {
 	UseMetadata  int
 	ExtractLinks int
 }
 
-type Response struct {
+type GetTextResponse struct {
 	Status string
 	URL    string
 	Text   string
+}
+
+type GetTitleOptions struct {
+	UseMetadata int
+}
+
+type GetTitleResponse struct {
+	Status string
+	URL    string
+	Title  string
 }
