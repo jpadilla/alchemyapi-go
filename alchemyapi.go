@@ -11,7 +11,7 @@ import (
 )
 
 // alchemyAPI is the public AlchemyAPI URL for APIs.
-const alchemyAPI = "http://access.alchemyapi.com"
+const alchemyAPI = "https://access.alchemyapi.com"
 
 // textExtractionAPI is the public AlchemyAPI URL for URLGetText.
 const textExtractionAPI = alchemyAPI + "/calls/url/URLGetText"
