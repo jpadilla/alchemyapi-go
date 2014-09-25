@@ -7,10 +7,11 @@ import (
 )
 
 func ExampleAlchemyAPI_GetTitle() {
-	alchemyAPIKey = "ALCHEMY_API_KEY"
+	alchemyAPIKey := "ALCHEMY_API_KEY"
 	alchemyClient := alchemyapi.New(alchemyAPIKey)
+	url := "http://www.cnn.com/2009/CRIME/01/13/missing.pilot/index.html"
 
-	titleResponse, err := alchemyClient.GetTitle(data.URL, alchemyapi.GetTitleOptions{})
+	titleResponse, err := alchemyClient.GetTitle(url, alchemyapi.GetTitleOptions{})
 
 	if err != nil {
 		log.Fatal(err)
@@ -20,10 +21,11 @@ func ExampleAlchemyAPI_GetTitle() {
 }
 
 func ExampleAlchemyAPI_GetText() {
-	alchemyAPIKey = "ALCHEMY_API_KEY"
+	alchemyAPIKey := "ALCHEMY_API_KEY"
 	alchemyClient := alchemyapi.New(alchemyAPIKey)
+	url := "http://www.cnn.com/2009/CRIME/01/13/missing.pilot/index.html"
 
-	textResponse, err := alchemyClient.GetText(data.URL, alchemyapi.GetTextOptions{})
+	textResponse, err := alchemyClient.GetText(url, alchemyapi.GetTextOptions{})
 
 	if err != nil {
 		log.Fatal(err)
