@@ -9,6 +9,25 @@ Go client library for [AlchemyAPI](http://www.alchemyapi.com/).
     - URLGetTitle
 
 
+## Versioning
+
+Each revision of the binding is tagged and the version is updated accordingly.
+
+Given Go's lack of built-in versioning, it is highly recommended you use a
+[package management tool](https://code.google.com/p/go-wiki/wiki/PackageManagementTools) in order
+to ensure a newer version of the binding does not affect backwards compatibility.
+
+To see the list of past versions, run `git tag`. To manually get an older
+version of the client, clone this repo, checkout the specific tag and build the
+library:
+
+```sh
+git clone https://github.com/jpadilla/alchemyapi-go.git
+cd alchemyapi
+git checkout api_version_tag
+make build
+```
+
 ## Installation
 
 ```
