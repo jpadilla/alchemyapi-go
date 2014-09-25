@@ -23,7 +23,7 @@ library:
 
 ```sh
 git clone https://github.com/jpadilla/alchemyapi-go.git
-cd alchemyapi
+cd alchemyapi-go
 git checkout api_version_tag
 make build
 ```
@@ -44,7 +44,6 @@ For details on all the functionality in this library, see the [GoDoc](http://god
 package main
 
 import (
-    "fmt"
     "log"
 
     alchemyapi "github.com/jpadilla/alchemyapi-go"
