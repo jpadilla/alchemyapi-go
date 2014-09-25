@@ -1,4 +1,4 @@
-# Go AlchemyAPI
+# Go AlchemyAPI [![Build Status](https://travis-ci.org/jpadilla/alchemyapi-go.svg?branch=master)](https://travis-ci.org/jpadilla/alchemyapi-go)
 
 Go client library for [AlchemyAPI](http://www.alchemyapi.com/).
 
