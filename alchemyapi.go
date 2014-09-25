@@ -11,7 +11,7 @@ import (
 )
 
 // alchemyAPI is the public AlchemyAPI URL for APIs.
-const alchemyAPI = "https://access.alchemyapi.com"
+const alchemyAPI = "http://access.alchemyapi.com"
 
 // textExtractionAPI is the public AlchemyAPI URL for URLGetText.
 const textExtractionAPI = alchemyAPI + "/calls/url/URLGetText"
@@ -25,7 +25,7 @@ type AlchemyAPI struct {
 }
 
 // New returns a new AlchemyAPI client.
-func New(apikey string) *Alchemy {
+func New(apikey string) *AlchemyAPI {
 	return &AlchemyAPI{apikey}
 }
 
