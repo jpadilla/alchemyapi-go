@@ -1,4 +1,5 @@
-package alchemy
+// Package alchemyapi provides the binding for AlchemyAPI.
+package alchemyapi
 
 import (
 	"encoding/json"
@@ -9,22 +10,28 @@ import (
 	"strconv"
 )
 
-const (
-	AlchemyAPI         = "http://access.alchemyapi.com"
-	TextExtractionAPI  = AlchemyAPI + "/calls/url/URLGetText"
-	TitleExtractionAPI = AlchemyAPI + "/calls/url/URLGetTitle"
-)
+// alchemyAPI is the public AlchemyAPI URL for APIs.
+const alchemyAPI = "http://access.alchemyapi.com"
 
-type Alchemy struct {
+// textExtractionAPI is the public AlchemyAPI URL for URLGetText.
+const textExtractionAPI = alchemyAPI + "/calls/url/URLGetText"
+
+// titleExtractionAPI is the public AlchemyAPI URL for URLGetTitle.
+const titleExtractionAPI = alchemyAPI + "/calls/url/URLGetTitle"
+
+// AlchemyAPI is used to invoke API calls.
+type AlchemyAPI struct {
 	apikey string
 }
 
+// New returns a new AlchemyAPI client.
 func New(apikey string) *Alchemy {
-	return &Alchemy{apikey}
+	return &AlchemyAPI{apikey}
 }
 
-func (client *Alchemy) GetTitle(requestedURL string, options GetTitleOptions) (*GetTitleResponse, error) {
-	addr := TitleExtractionAPI + "?"
+// GetTitle returns the extracted title for a given URL.
+func (client *AlchemyAPI) GetTitle(requestedURL string, options GetTitleOptions) (*GetTitleResponse, error) {
+	addr := titleExtractionAPI + "?"
 
 	params := url.Values{}
 	params.Add("apikey", client.apikey)
@@ -62,8 +69,9 @@ func (client *Alchemy) GetTitle(requestedURL string, options GetTitleOptions) (*
 	return response, nil
 }
 
-func (client *Alchemy) GetText(requestedURL string, options GetTextOptions) (*GetTextResponse, error) {
-	addr := TextExtractionAPI + "?"
+// GetText returns the extracted text for a given URL.
+func (client *AlchemyAPI) GetText(requestedURL string, options GetTextOptions) (*GetTextResponse, error) {
+	addr := textExtractionAPI + "?"
 
 	params := url.Values{}
 	params.Add("apikey", client.apikey)
